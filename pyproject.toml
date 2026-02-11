@@ -1,0 +1,26 @@
+[project]
+name = "tbf"
+version = "0.1.0"
+description = "Tensor Batch Format"
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.2.0",
+]
+
+[dependency-groups]
+dev = [
+  "pytest>=8.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["python/tests"]
+
+[tool.uv]
+package = true
+
+[build-system]
+requires = ["hatchling>=1.24.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["python/tbf"]
